@@ -41,4 +41,6 @@ Route::get('empty', function()
 	Cart::instance('saveForLater')->destroy();
 });
 
-Route::view('/product', 'product');
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
